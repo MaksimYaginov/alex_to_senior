@@ -1,4 +1,5 @@
 import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.junit5.TextReportExtension;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Epic;
@@ -27,6 +28,7 @@ public class SecondTest {
         open("https://ya.ru/");
         $(By.name("text")).setValue("собака").click();
         $$(By.xpath("//*[@data-type = 'fulltext']")).shouldHave(CollectionCondition.containExactTextsCaseSensitive("собака"));
+        $$(By.xpath("//*[@data-index]")).should(CollectionCondition.size(5));
 
 
     }
