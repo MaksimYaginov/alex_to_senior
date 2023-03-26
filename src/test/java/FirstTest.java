@@ -26,6 +26,6 @@ public class FirstTest {
     @Test()
     public void firstTest(){
         open("https://dzen.ru/");
-        $$("[data-testid='news-item']").shouldBe(CollectionCondition.size(10));
+        $$("[data-testid='news-item']").shouldBe(CollectionCondition.size(70));
     }
 }
